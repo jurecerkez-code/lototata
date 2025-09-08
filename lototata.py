@@ -15,7 +15,11 @@ def gen_numbers():
     return main, extra
 
 def build_message(tz="Europe/Berlin"):
-    now = datetime.now(ZoneInfo(tz))
+    try:
+        now = datetime.now(ZoneInfo(tz))
+    except:
+        # Fallback to UTC if timezone not available
+        now = datetime.now()
     date_str = now.strftime("%A, %d %B %Y")
     main, extra = gen_numbers()
     main_str = " - ".join(f"{n:02d}" for n in main)

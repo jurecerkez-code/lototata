@@ -2,7 +2,7 @@ name: Send Lotto Numbers
 
 on:
   schedule:
-    # Tuesday and Friday at 08:00 UTC (Berlin: 10:00 CEST summer / 09:00 CET winter)
+    # Tuesday and Friday at 08:00 UTC (Berlin/Zagreb: 10:00 CEST summer / 09:00 CET winter)
     - cron: "0 8 * * 2,5"
   workflow_dispatch: {}
 
@@ -27,5 +27,5 @@ jobs:
           TWILIO_AUTH_TOKEN: ${{ 1780aa886302c3397d7076f8689f297a }}
           DAD_NUMBER: ${{ 00385998167000 }}
           # Optional custom sender if your sandbox number differs (must include whatsapp: prefix)
-          TWILIO_WHATSAPP_FROM: ${{ 0014155238886 }}
+          TWILIO_WHATSAPP_FROM: ${{ s0014155238886 }}
         run: python lototata.py

@@ -35,7 +35,7 @@ Sends lotto numbers to WhatsApp automatically every Tuesday and Saturday using G
 - If successful, your dad receives a WhatsApp message
 
 ## Automatic schedule (timezones)
-- Cron: `0 8 * * 2,6` → runs Tue/Sat at 08:00 UTC
+- Cron: `0 8 * * 2,4` → runs Tue/Sat at 08:00 UTC
 - Berlin local time: 10:00 in summer (CEST), 09:00 in winter (CET)
 - Change time by editing `.github/workflows/lotto.yml`
 

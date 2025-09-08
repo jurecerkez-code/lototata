@@ -1,11 +1,11 @@
 # Lototata — WhatsApp Lotto Bot
 
-Sends lotto numbers to WhatsApp automatically every Tuesday and Friday using GitHub Actions and Twilio Sandbox.
+Sends lotto numbers to WhatsApp automatically every Tuesday and Saturday using GitHub Actions and Twilio Sandbox.
 
 ## What it does
 - 5 main numbers (1–50) + 2 extra (1–12), sorted ascending
 - Friendly message with date (Europe/Berlin)
-- Automatic schedule: Tue & Fri at 08:00 UTC
+- Automatic schedule: Tue & Sat at 08:00 UTC
 - Retries on failure, exits with non‑zero code if sending fails
 
 ## Files
@@ -35,7 +35,7 @@ Sends lotto numbers to WhatsApp automatically every Tuesday and Friday using Git
 - If successful, your dad receives a WhatsApp message
 
 ## Automatic schedule (timezones)
-- Cron: `0 8 * * 2,5` → runs Tue/Fri at 08:00 UTC
+- Cron: `0 8 * * 2,6` → runs Tue/Sat at 08:00 UTC
 - Berlin local time: 10:00 in summer (CEST), 09:00 in winter (CET)
 - Change time by editing `.github/workflows/lotto.yml`
 

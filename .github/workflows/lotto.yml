@@ -26,6 +26,6 @@ jobs:
           TWILIO_ACCOUNT_SID: ${{ AC8791f70edd64db6e26ac016681d07335 }}
           TWILIO_AUTH_TOKEN: ${{ 1780aa886302c3397d7076f8689f297a }}
           DAD_NUMBER: ${{ +385998167000 }}
-          # Optional custom sender if your sandbox number differs (must include whatsapp: prefix)
-          # TWILIO_WHATSAPP_FROM: ${{ +385998167000 }}
+          Optional custom sender if your sandbox number differs (must include whatsapp: prefix)
+          TWILIO_WHATSAPP_FROM: ${{ +14155238886 }}
         run: python lototata.py

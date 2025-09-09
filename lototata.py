@@ -32,13 +32,21 @@ def build_message(tz="Europe/Berlin"):
     )
 
 def send():
-    sid = os.getenv("AC8791f70edd64db6e26ac016681d07335")
-    tok = os.getenv("1780aa886302c3397d7076f8689f297a")
-    dad = os.getenv("+385998167000")
-    from_whatsapp = os.getenv("+14155238886")
+    sid = os.getenv("TWILIO_ACCOUNT_SID")
+    tok = os.getenv("TWILIO_AUTH_TOKEN")
+    dad = os.getenv("DAD_NUMBER")
+    # Expect full channel value for from_, e.g. "whatsapp:+14155238886" (Twilio sandbox default)
+    from_whatsapp = os.getenv("TWILIO_WHATSAPP_FROM", "whatsapp:+14155238886")
 
     if not sid or not tok or not dad:
-        print("❌ Missing env: TWILIO_ACCOUNT_SID / TWILIO_AUTH_TOKEN / DAD_NUMBER")
+        missing = []
+        if not sid:
+            missing.append("TWILIO_ACCOUNT_SID")
+        if not tok:
+            missing.append("TWILIO_AUTH_TOKEN")
+        if not dad:
+            missing.append("DAD_NUMBER")
+        print(f"❌ Missing env: {', '.join(missing)}")
         return 2
 
     client = Client(sid, tok)
